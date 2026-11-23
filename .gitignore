@@ -4,3 +4,4 @@ testbench/tb_hc05_corr
 __pycache__/
 docs/articulo/pg-*.jpg
 node_modules/
+.DS_Store
