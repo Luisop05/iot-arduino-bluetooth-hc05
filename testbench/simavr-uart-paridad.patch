@@ -1,0 +1,13 @@
+--- simavr/sim/avr_uart.c.orig
++++ simavr/sim/avr_uart.c
+@@ -245,7 +245,9 @@
+ 	const int databits[] = { 5,6,7,8,  /* 'reserved', assume 8 */8,8,8, 9 };
+ 	int db = databits[avr_regbit_get(avr, p->ucsz) | (avr_regbit_get(avr, p->ucsz2) << 2)];
+ 	int sb = 1 + avr_regbit_get(avr, p->usbs);
+-	int word_size = 1 /* start */ + db /* data bits */ + 1 /* parity */ + sb /* stops */;
++	/* Correccion: el bit de paridad solo existe si UPMn1:0 != 0 (bits 5:4 de UCSRnC) */
++	int par = ((avr->data[p->ucsz.reg] >> 4) & 0x3) ? 1 : 0;
++	int word_size = 1 /* start */ + db /* data bits */ + par /* parity */ + sb /* stops */;
+ 	int cycles_per_bit = (val+1)*8;
+ 	if (!avr_regbit_get(avr, p->u2x))
+ 		cycles_per_bit *= 2;

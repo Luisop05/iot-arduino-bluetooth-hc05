@@ -1,0 +1,24 @@
+$ make -C firmware
+AVR Memory Usage
+----------------
+Device: atmega328p
+Program:    7236 bytes (22.1% Full)
+(.text + .data + .bootloader)
+Data:        664 bytes (32.4% Full)
+(.data + .bss + .noinit)
+$ make -C testbench
+$ ./testbench/tb_hc05_corr firmware/build_bt_hc05_sleep_9600/bt_hc05.elf /tmp/demo --ff
+simulados 60.0 s en 31.69 s reales (x1.89), CPU activa 6.73 %
+$ head -n 12 /tmp/demo/telefono_rx.csv
+t_us,linea
+2034005.5,#T,2000,23,1004,0,0,0,0,0,0,0
+2043365.5,EV BT 1
+3033431.8,#T,3000,24,1012,0,0,0,0,0,0,1
+3058391.8,V1 V0 R1 R0 S P E<txt>
+3510538.8,OK V1
+4033886.1,#T,4000,24,1037,6,2,0,0,1,0,1
+4041166.1,OK R1
+4557864.0,ST V=1 R=1 BTN=0 BT=1 CPU=2.4 LOOPS=1037 OK=4 ERR=0
+5034360.6,#T,5000,26,1062,11,4,0,0,1,1,1
+5041640.7,OK V0
+5510549.9,OK R0

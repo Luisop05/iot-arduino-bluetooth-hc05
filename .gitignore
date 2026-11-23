@@ -1,0 +1,6 @@
+firmware/build_*/
+testbench/tb_hc05
+testbench/tb_hc05_corr
+__pycache__/
+docs/articulo/pg-*.jpg
+node_modules/

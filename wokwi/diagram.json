@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Luis Eduardo Ortiz Perea",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 120, "left": 0, "attrs": {} },
+    { "type": "chip-hc05", "id": "bt", "top": -60, "left": 120, "attrs": { "baud": "9600", "t_enlace_ms": "1500", "demo": "0" } },
+    { "type": "wokwi-led", "id": "led_v", "top": -10, "left": 400, "attrs": { "color": "green", "label": "D2 verde" } },
+    { "type": "wokwi-led", "id": "led_r", "top": -10, "left": 460, "attrs": { "color": "red", "label": "D3 rojo" } },
+    { "type": "wokwi-resistor", "id": "r_v", "top": 70, "left": 380, "rotate": 90, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_r", "top": 70, "left": 440, "rotate": 90, "attrs": { "value": "220" } },
+    { "type": "wokwi-pushbutton", "id": "btn", "top": -40, "left": 540, "attrs": { "color": "blue", "label": "D4 pulsador" } },
+    { "type": "wokwi-logic-analyzer", "id": "logic", "top": 380, "left": 20, "attrs": {} }
+  ],
+  "connections": [
+    [ "$serialMonitor:TX", "bt:SPP_RX", "", [] ],
+    [ "$serialMonitor:RX", "bt:SPP_TX", "", [] ],
+    [ "bt:TXD", "uno:0", "orange", [ "v0" ] ],
+    [ "bt:RXD", "uno:1", "yellow", [ "v0" ] ],
+    [ "bt:STATE", "uno:5", "purple", [ "v0" ] ],
+    [ "bt:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "bt:GND", "uno:GND.1", "black", [ "v0" ] ],
+    [ "uno:2", "led_v:A", "green", [ "v0" ] ],
+    [ "led_v:C", "r_v:1", "green", [ "v0" ] ],
+    [ "r_v:2", "uno:GND.2", "black", [ "v0" ] ],
+    [ "uno:3", "led_r:A", "red", [ "v0" ] ],
+    [ "led_r:C", "r_r:1", "red", [ "v0" ] ],
+    [ "r_r:2", "uno:GND.2", "black", [ "v0" ] ],
+    [ "uno:4", "btn:1.l", "blue", [ "v0" ] ],
+    [ "btn:2.l", "uno:GND.3", "black", [ "v0" ] ],
+    [ "logic:D0", "uno:0", "orange", [] ],
+    [ "logic:D1", "uno:1", "yellow", [] ],
+    [ "logic:D2", "uno:2", "green", [] ],
+    [ "logic:D3", "uno:3", "red", [] ],
+    [ "logic:D4", "uno:4", "blue", [] ],
+    [ "logic:D5", "uno:5", "purple", [] ],
+    [ "logic:GND", "uno:GND.3", "black", [] ]
+  ],
+  "serialMonitor": { "display": "terminal", "newline": "lf" },
+  "dependencies": {}
+}

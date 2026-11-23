@@ -1,0 +1,14 @@
+{
+  "name": "HC-05",
+  "author": "Luis Eduardo Ortiz Perea",
+  "pins": ["STATE", "RXD", "TXD", "GND", "VCC", "EN", "", "", "SPP_RX", "SPP_TX"],
+  "attributes": [
+    { "name": "baud", "default": 9600 },
+    { "name": "t_enlace_ms", "default": 1500 },
+    { "name": "demo", "default": 0 },
+    { "name": "cortar", "default": 0 }
+  ],
+  "controls": [
+    { "id": "cortar", "label": "Cortar enlace Bluetooth (1 = cortado)", "type": "range", "min": 0, "max": 1, "step": 1 }
+  ]
+}

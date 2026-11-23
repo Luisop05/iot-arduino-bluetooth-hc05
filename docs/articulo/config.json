@@ -1,0 +1,11 @@
+{
+  "autor": "Luis Eduardo Ortiz Perea",
+  "correo": "leduortiz@poligran.edu.co",
+  "github": "https://github.com/Luisop05/iot-arduino-bluetooth-hc05",
+  "wokwi": {
+    "enlace": "",
+    "loops_por_s": 45900,
+    "cpu_pct": 96.5,
+    "verificado": true
+  }
+}
