@@ -6,7 +6,7 @@ Luis Eduardo Ortiz Perea · leduortiz@poligran.edu.co · Grupo 5 · Tutor: Jesú
 Un Arduino UNO recibe órdenes por Bluetooth a través del módulo HC-05, conectado al UART (D0/D1) según la Fig. 2 de la guía, y controla dos LED. El repositorio incluye el firmware, el banco de pruebas automatizado en simavr, el proyecto de Wokwi, los scripts de medición y análisis, y los registros originales de todas las ejecuciones.
 
 - **Artículo (IEEE):** [`docs/articulo/Entrega2_Arduino_IEEE_Ortiz_Perea.pdf`](docs/articulo/Entrega2_Arduino_IEEE_Ortiz_Perea.pdf)
-- **Simulación en Wokwi:** ver el enlace en el artículo (Apéndice A) y la carpeta [`wokwi/`](wokwi/)
+- **Simulación en Wokwi:** https://wokwi.com/projects/481514518773608449 (archivos en [`wokwi/`](wokwi/))
 
 ## Circuito
 

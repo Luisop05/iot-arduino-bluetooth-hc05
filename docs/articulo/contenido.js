@@ -228,7 +228,7 @@ const doc = new Document({
     { properties: { type: SectionType.CONTINUOUS, page: pagina, column: { count: 2, space: 360 } },
       footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ children: [PageNumber.CURRENT], font: FUENTE, size: 16 })] })] }) },
       children: cuerpo },
-    { properties: { type: SectionType.CONTINUOUS, page: pagina, column: { count: 1 } }, children: apB },
+    { properties: { type: SectionType.NEXT_PAGE, page: pagina, column: { count: 1 } }, children: apB },
   ],
 });
 Packer.toBuffer(doc).then((b) => {
